@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+ 
+
+  <node name="listener" pkg="digit" type="listener.py" output="screen" />
+  <include file="$(find digit)/launch/digit.launch"/>
+  <include file="$(find tams_wireless_ft)/launch/wireless_ft.launch"/>
+
+ 
+</launch>
