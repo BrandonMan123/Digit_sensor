@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+ 
+
+  <node name="talker" pkg="digit" type="digitReadings.py" output="screen" />
+  <node name="tare" pkg="digit" type="tare_server.py" output="screen"/>
+
+ 
+</launch>
