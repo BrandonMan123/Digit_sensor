@@ -2,10 +2,14 @@
 A ROS Package that enables shear force estimation with Facebook's DIGIT Tactile sensors
 
 Required dependencies:
+
 OpenCV
+
 Digit: https://github.com/facebookresearch/digit-interface
+
 PRMessages: https://github.com/personalrobotics/pr_control_msgs
 
+You can see a demo here: https://drive.google.com/file/d/1lFl928FAtotZ-w2F6MqtwLAZmR1IUUmk/view
 
 How to run:
 
