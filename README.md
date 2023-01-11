@@ -1,7 +1,7 @@
 # Digit_sensor
 A ROS Package that enables shear force estimation with Facebook's DIGIT Tactile sensors
 
-Required dependencies:
+# Required dependencies:
 
 OpenCV
 
@@ -9,9 +9,9 @@ Digit: https://github.com/facebookresearch/digit-interface
 
 PRMessages: https://github.com/personalrobotics/pr_control_msgs
 
-You can see a demo here: https://drive.google.com/file/d/1lFl928FAtotZ-w2F6MqtwLAZmR1IUUmk/view
+## You can see a demo here: https://drive.google.com/file/d/1lFl928FAtotZ-w2F6MqtwLAZmR1IUUmk/view
 
-How to run:
+# How to run:
 
 1. Run `catkin build`
 2. Run `source devel/setup.bash` from the root directory
