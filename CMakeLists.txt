@@ -59,7 +59,7 @@ add_service_files(
   FILES
   Tare.srv
   AddTwoInts.srv
-  ServiceExample.srv
+  ResetPoint.srv
 )
 
 ## Generate actions in the 'action' folder

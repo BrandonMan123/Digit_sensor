@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-PKG = 'collector'
-import roslib; roslib.load_manifest(PKG)
+# PKG = 'collector'
+# import roslib; roslib.load_manifest(PKG)
 import rospy
 from rospy.numpy_msg import numpy_msg
 from std_msgs.msg import Float64
@@ -32,20 +32,27 @@ def talker():
     digit.connect()
     bridge = CvBridge()
     flow = OpticalReader()
+    tare_offset = 0
     while not rospy.is_shutdown():
 
         a = digit.get_frame()
         vField = None
 
-        if init_img is None or is_tare:
-            init_img = a 
+        if is_tare:
+            curr_img = a 
+            vField = flow.computeOpticalFlow(init_img, curr_img, viz)
+            tare_offset = vField.get_magnitude()
             is_tare = False
+            print(f"tare offset: {tare_offset}")
             print ("Tare successful")
+
+        if init_img is None:
+            init_img = a 
         else:
             curr_img = a 
             vField = flow.computeOpticalFlow(init_img, curr_img, viz)
-
-            magnitude_pub.publish(vField.get_magnitude())
+            # print(f"magnitude: {vField.get_magnitude() }")
+            magnitude_pub.publish(vField.get_magnitude()-tare_offset)
 
 
         msg = bridge.cv2_to_imgmsg(a)

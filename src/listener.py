@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-PKG = 'collector'
-import roslib; roslib.load_manifest(PKG)
+# PKG = 'collector'
+# import roslib; roslib.load_manifest(PKG)
 
 import rospy
 from rospy_tutorials.msg import Floats
